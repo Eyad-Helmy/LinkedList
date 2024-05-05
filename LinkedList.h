@@ -20,17 +20,20 @@ public:
             head = newNode;
             tail = newNode;
             size++;
+            tail->next = nullptr;
         } else {
             tail->next = newNode;
             tail = newNode;
+            tail->next = nullptr;
         }
     }
     void printlist() {
         Node<T> *temp = head;
         int index = 1;
-        while(temp->next != nullptr) {
-            std::cout << "Node "<< index << ": " << temp->info;
+        while(temp != nullptr) {
+            std::cout << "Node "<< index << ": " << temp->info << "\n";
             temp = temp->next;
+            index++;
         }
     }
 };
