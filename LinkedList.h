@@ -33,6 +33,23 @@ public:
         newNode->next = head;       //now the new pointer points to the first node
         head = newNode;             //now the head points to the new node
     };
+    void search(T data) {
+        Node<T> *ptr = head;
+        bool found = false;
+        int index = 1;
+
+        while(ptr != nullptr && !found) {           //if found is true the  loop would stop
+            if(ptr->info == data)
+                found = true;
+            else {
+                ptr = ptr->next;
+                index++;
+            }
+        }
+        if(found) {
+            std::cout << data << " was found in Node number " << index;
+        }
+    }
     void printlist() {
         Node<T> *temp = head;
         int index = 1;

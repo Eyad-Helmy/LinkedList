@@ -11,6 +11,9 @@ int main()
     }
     list1.addToStart(78);
     list1.printlist();
+    list1.search(4);
+
+    std::cout << " \n=================================================== \n";
 
     std::cout<< "list of string: \n";
     LinkedList<std::string> list2;
@@ -18,6 +21,8 @@ int main()
     for(const std::string &element : arr2) {
         list2.addToList(element);
     }
+    list2.addToStart("Cpp is a language");
     list2.printlist();
+    list2.search("Cpp is a language");
     return 0;
 }
