@@ -9,6 +9,7 @@ int main()
     for(const int &element: arr) {
         list1.addToList(element);
     }
+    list1.addToStart(78);
     list1.printlist();
 
     std::cout<< "list of string: \n";

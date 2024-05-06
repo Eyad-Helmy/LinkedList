@@ -12,7 +12,7 @@ private:
     Node<T> *head , *tail;
     int size;
 public:
-    LinkedList() : head(nullptr), tail(nullptr), size(0) {};
+    LinkedList() : head(nullptr), tail(nullptr), size(0) {};            //constructor
     void addToList(T data) {
         Node<T> *newNode = new Node<T>;
         newNode->info = data;
@@ -27,6 +27,12 @@ public:
             tail->next = nullptr;
         }
     }
+    void addToStart(T data) {           //this adds an element at the beginning of the list instead of its end
+        Node<T> *newNode = new Node<T>;
+        newNode->info = data;
+        newNode->next = head;       //now the new pointer points to the first node
+        head = newNode;             //now the head points to the new node
+    };
     void printlist() {
         Node<T> *temp = head;
         int index = 1;
